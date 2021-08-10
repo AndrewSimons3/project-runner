@@ -2,4 +2,7 @@
 const chokidar = require('chokidar');
 const prog = require('caporal');
 
-console.log("I was executed")
+chokidar.watch('.')
+  .on('add', () => console.log('STARTING USERS PROGRAM'))
+  .on('change', () => console.log('FILE CHANGED'))
+  .on('unlink', () => console.log('FILE UNLINKED'));
